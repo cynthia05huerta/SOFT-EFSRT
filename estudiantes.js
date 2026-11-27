@@ -87,11 +87,109 @@ const practicantes = [
 ];
 
 // ======================================
+// ACTIVIDAD 9: VARIABLES DE ESTADO
+// ======================================
+
+let estadoSeleccionado = "Todos";
+let textoBusqueda = "";
+
+// ======================================
 // CAPTURAR ELEMENTOS DEL HTML
 // ======================================
 
 const contenedor = document.getElementById("contenedor");
 const total = document.getElementById("total");
+const validados = document.getElementById("validados");
+const pendientes = document.getElementById("pendientes");
+const filtroEstado = document.getElementById("filtroEstado");
+const buscador = document.getElementById("buscador");
+const resultados = document.getElementById("resultados");
+const mensaje = document.getElementById("mensaje");
+
+// ======================================
+// ACTUALIZAR CONTADORES
+// ======================================
+
+function actualizarContadores() {
+
+    total.textContent = practicantes.length;
+
+    validados.textContent = practicantes.filter(
+        estudiante => estudiante.estado === "Validado"
+    ).length;
+
+    pendientes.textContent = practicantes.filter(
+        estudiante => estudiante.estado === "Pendiente"
+    ).length;
+
+}
+
+// ======================================
+// NORMALIZAR TEXTO PARA EL BUSCADOR
+// ======================================
+
+function normalizarTexto(texto) {
+
+    return texto
+        .toLowerCase()
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "")
+        .trim();
+
+}
+
+// ======================================
+// FILTRAR PRACTICANTES
+// ======================================
+
+function filtrarPracticantes() {
+
+    return practicantes.filter(estudiante => {
+
+        const coincideEstado =
+            estadoSeleccionado === "Todos" ||
+            estudiante.estado === estadoSeleccionado;
+
+        const coincideBusqueda =
+            normalizarTexto(estudiante.nombre)
+                .includes(normalizarTexto(textoBusqueda)) ||
+            normalizarTexto(estudiante.codigo)
+                .includes(normalizarTexto(textoBusqueda));
+
+        return coincideEstado && coincideBusqueda;
+
+    });
+
+}
+
+// ======================================
+// VALIDAR FÓLDER SIN RECARGAR LA PÁGINA
+// ======================================
+
+function validarPracticante(codigo) {
+
+    const estudiante = practicantes.find(
+        persona => persona.codigo === codigo
+    );
+
+    if (estudiante && estudiante.estado === "Pendiente") {
+
+        // CAMBIO DE ESTADO
+        estudiante.estado = "Validado";
+
+        // ACTUALIZAR INTERFAZ
+        renderizarPracticantes();
+
+        // MOSTRAR MENSAJE
+        mensaje.textContent =
+            "El fólder de " + estudiante.nombre +
+            " fue validado correctamente.";
+
+        mensaje.classList.remove("hidden");
+
+    }
+
+}
 
 // ======================================
 // FUNCIÓN PARA GENERAR LAS TARJETAS
@@ -99,29 +197,56 @@ const total = document.getElementById("total");
 
 function renderizarPracticantes() {
 
-    total.textContent = practicantes.length;
+    actualizarContadores();
 
-    contenedor.innerHTML = practicantes.map(estudiante => {
+    const estudiantesFiltrados = filtrarPracticantes();
 
-        // Calcular porcentaje de horas
+    resultados.textContent =
+        "Mostrando " + estudiantesFiltrados.length +
+        " de " + practicantes.length + " practicantes";
+
+    // MENSAJE SI NO HAY RESULTADOS
+    if (estudiantesFiltrados.length === 0) {
+
+        contenedor.innerHTML = `
+            <div class="col-span-full bg-white border border-slate-200 rounded-xl p-10 text-center">
+
+                <h3 class="font-bold text-indigo-950 text-lg">
+                    No se encontraron practicantes
+                </h3>
+
+                <p class="text-slate-500 text-sm mt-2">
+                    Intente cambiar el filtro o el texto de búsqueda.
+                </p>
+
+            </div>
+        `;
+
+        return;
+
+    }
+
+    // GENERACIÓN DINÁMICA CON MAP
+    contenedor.innerHTML = estudiantesFiltrados.map(estudiante => {
+
         const porcentaje = Math.min(
             Math.round((estudiante.horas / 128) * 100),
             100
         );
 
-        // Color según el estado
-        const colorEstado = estudiante.estado === "Validado"
+        const estaValidado =
+            estudiante.estado === "Validado";
+
+        const colorEstado = estaValidado
             ? "bg-green-100 text-green-800"
             : "bg-amber-100 text-amber-800";
 
-        // Obtener iniciales del estudiante
         const iniciales = estudiante.nombre
             .split(" ")
             .slice(0, 2)
             .map(palabra => palabra[0])
             .join("");
 
-        // Plantilla de la tarjeta
         return `
             <article class="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden hover:shadow-lg transition">
 
@@ -169,6 +294,7 @@ function renderizarPracticantes() {
                             </p>
                         </div>
 
+                        <!-- BARRA DE PROGRESO -->
                         <div class="border-t border-slate-200 pt-4">
 
                             <div class="flex justify-between text-sm mb-2">
@@ -197,6 +323,7 @@ function renderizarPracticantes() {
 
                         </div>
 
+                        <!-- ESTADO DEL FÓLDER -->
                         <div class="flex justify-between items-center border-t border-slate-200 pt-4">
 
                             <span class="text-sm text-slate-500">
@@ -208,6 +335,22 @@ function renderizarPracticantes() {
                             </span>
 
                         </div>
+
+                        <!-- BOTÓN VALIDAR -->
+                        <button
+                            type="button"
+                            data-codigo="${estudiante.codigo}"
+                            ${estaValidado ? "disabled" : ""}
+                            class="w-full py-3 rounded-lg text-sm font-semibold transition
+                            ${estaValidado
+                                ? "bg-emerald-50 text-emerald-700 cursor-not-allowed"
+                                : "bg-[#C91414] text-white hover:bg-red-800"}">
+
+                            ${estaValidado
+                                ? "✓ Fólder validado"
+                                : "Validar fólder"}
+
+                        </button>
 
                     </div>
 
@@ -221,7 +364,51 @@ function renderizarPracticantes() {
 }
 
 // ======================================
-// EJECUTAR LA FUNCIÓN
+// EVENTO: FILTRO POR ESTADO
+// ======================================
+
+filtroEstado.addEventListener("change", function () {
+
+    estadoSeleccionado = this.value;
+
+    mensaje.classList.add("hidden");
+
+    renderizarPracticantes();
+
+});
+
+// ======================================
+// EVENTO: BUSCADOR
+// ======================================
+
+buscador.addEventListener("input", function () {
+
+    textoBusqueda = this.value;
+
+    mensaje.classList.add("hidden");
+
+    renderizarPracticantes();
+
+});
+
+// ======================================
+// EVENTO: BOTÓN VALIDAR
+// ======================================
+
+contenedor.addEventListener("click", function (evento) {
+
+    const boton = evento.target.closest("button[data-codigo]");
+
+    if (boton && !boton.disabled) {
+
+        validarPracticante(boton.dataset.codigo);
+
+    }
+
+});
+
+// ======================================
+// EJECUTAR LA FUNCIÓN INICIAL
 // ======================================
 
 renderizarPracticantes();

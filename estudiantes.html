@@ -44,29 +44,135 @@
             </h1>
 
             <p class="text-slate-500 mt-2">
-                Consulta la información y el progreso de los estudiantes.
+                Consulta la información, el progreso y el estado de los estudiantes.
             </p>
 
         </header>
 
-        <!-- CONTADOR -->
-        <section class="bg-white rounded-xl border border-slate-200 p-5 mb-8">
+        <!-- CONTADORES DINÁMICOS -->
+        <section class="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-8"
+                 aria-live="polite">
 
-            <p class="text-slate-500 text-sm">
-                Total de practicantes registrados
-            </p>
+            <!-- TOTAL -->
+            <article class="bg-white rounded-xl border border-slate-200 border-l-4 border-l-indigo-600 p-6 shadow-sm">
 
-            <p id="total" class="text-3xl font-bold text-indigo-950 mt-2">
-                0
-            </p>
+                <p class="text-slate-500 text-sm">
+                    Total de practicantes
+                </p>
+
+                <p id="total" class="text-3xl font-bold text-indigo-950 mt-2">
+                    0
+                </p>
+
+                <p class="text-xs text-slate-400 mt-2">
+                    Estudiantes registrados
+                </p>
+
+            </article>
+
+            <!-- VALIDADOS -->
+            <article class="bg-white rounded-xl border border-slate-200 border-l-4 border-l-emerald-500 p-6 shadow-sm">
+
+                <p class="text-slate-500 text-sm">
+                    Fólderes validados
+                </p>
+
+                <p id="validados" class="text-3xl font-bold text-emerald-600 mt-2">
+                    0
+                </p>
+
+                <p class="text-xs text-slate-400 mt-2">
+                    Practicantes aprobados
+                </p>
+
+            </article>
+
+            <!-- PENDIENTES -->
+            <article class="bg-white rounded-xl border border-slate-200 border-l-4 border-l-amber-500 p-6 shadow-sm">
+
+                <p class="text-slate-500 text-sm">
+                    Fólderes pendientes
+                </p>
+
+                <p id="pendientes" class="text-3xl font-bold text-amber-600 mt-2">
+                    0
+                </p>
+
+                <p class="text-xs text-slate-400 mt-2">
+                    Pendientes de revisión
+                </p>
+
+            </article>
 
         </section>
+
+        <!-- FILTROS Y BUSCADOR -->
+        <section class="bg-white rounded-xl border border-slate-200 shadow-sm p-6 mb-8">
+
+            <h2 class="font-bold text-indigo-950 mb-4">
+                Buscar y filtrar practicantes
+            </h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+
+                <!-- BUSCADOR -->
+                <div>
+                    <label for="buscador" class="block text-sm font-medium mb-2">
+                        Buscar estudiante
+                    </label>
+
+                    <input
+                        type="search"
+                        id="buscador"
+                        placeholder="Ingrese nombre o código..."
+                        class="w-full border border-slate-300 rounded-lg px-4 py-3 text-sm outline-none focus:ring-2 focus:ring-indigo-500">
+                </div>
+
+                <!-- FILTRO POR ESTADO -->
+                <div>
+                    <label for="filtroEstado" class="block text-sm font-medium mb-2">
+                        Estado del fólder
+                    </label>
+
+                    <select
+                        id="filtroEstado"
+                        class="w-full border border-slate-300 rounded-lg px-4 py-3 text-sm outline-none focus:ring-2 focus:ring-indigo-500">
+
+                        <option value="Todos">Todos los practicantes</option>
+                        <option value="Validado">Validados</option>
+                        <option value="Pendiente">Pendientes</option>
+
+                    </select>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- MENSAJE DE VALIDACIÓN -->
+        <div id="mensaje"
+             role="status"
+             class="hidden bg-emerald-50 border border-emerald-200 text-emerald-800 rounded-xl p-4 mb-6">
+        </div>
+
+        <!-- RESULTADOS -->
+        <div class="flex justify-between items-center mb-5">
+
+            <h2 class="text-xl font-bold text-indigo-950">
+                Lista de practicantes
+            </h2>
+
+            <p id="resultados" class="text-sm text-slate-500">
+                Mostrando 0 practicantes
+            </p>
+
+        </div>
 
         <!-- CONTENEDOR DE TARJETAS DINÁMICAS -->
         <section id="contenedor"
                  class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 
-            <!-- JavaScript genera aquí las 10 tarjetas -->
+            <!-- JavaScript genera aquí las tarjetas -->
 
         </section>
 
