@@ -1,1 +1,263 @@
-<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>SOFT-EFSRT</title><script src="https://cdn.tailwindcss.com"></script></head><body class="bg-slate-50 text-slate-800"><nav class="bg-slate-900 text-white p-5 flex flex-wrap gap-5"><a class="hover:underline" href="index.html">Inicio</a><a class="hover:underline" href="portafolio.html">Equipo</a><a class="hover:underline" href="login.html">Login</a><a class="hover:underline" href="dashboard.html">Supervisión</a><a class="hover:underline" href="estudiantes.html">Estudiantes</a><a class="hover:underline" href="componentes.html">Atomic Design</a></nav><main class="max-w-6xl mx-auto p-6"><h1 class="text-3xl font-bold text-indigo-950 mb-6">SOFT-EFSRT</h1><p class="text-lg">Sistema de gestión de experiencias formativas. Selecciona un módulo del menú.</p></main><footer class="bg-indigo-950 text-white p-8 mt-8"><div class="grid grid-cols-1 md:grid-cols-3 gap-8"><div><h2 class="font-bold text-xl">SOFT-EFSRT</h2><p>Experiencias formativas</p></div><div><h2 class="font-bold">Enlaces rápidos</h2><a href="dashboard.html">Supervisión</a><br><a href="estudiantes.html">Estudiantes</a></div><div><h2 class="font-bold">Contacto</h2><p>San Agustín de Cajas, Huancayo</p><p>Completar correo y teléfono oficiales</p></div></div><p class="border-t-2 border-[#C91414] mt-6 pt-4 text-center">© 2026 SOFT-EFSRT</p></footer></body></html>
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio | SOFT-EFSRT</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col">
+
+    <!-- MENÚ DE NAVEGACIÓN -->
+    <nav class="bg-indigo-950 text-white shadow-md">
+        <div class="max-w-7xl mx-auto px-6 py-5 flex flex-wrap items-center justify-between gap-5">
+
+            <a href="index.html" class="text-2xl font-bold">
+                SOFT<span class="text-red-400">-EFSRT</span>
+            </a>
+
+            <div class="flex flex-wrap gap-5 text-sm font-medium">
+                <a href="index.html" class="hover:text-red-300">Inicio</a>
+                <a href="portafolio.html" class="hover:text-red-300">Portafolio</a>
+                <a href="dashboard.html" class="hover:text-red-300">Supervisión</a>
+                <a href="estudiantes.html" class="hover:text-red-300">Practicantes</a>
+                <a href="componentes.html" class="hover:text-red-300">Atomic Design</a>
+
+                <a href="login.html"
+                   class="bg-[#C91414] px-4 py-2 rounded-lg hover:bg-red-800">
+                    Iniciar sesión
+                </a>
+            </div>
+
+        </div>
+    </nav>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main class="flex-1">
+
+        <section class="bg-indigo-50 py-16 px-6 text-center">
+
+            <span class="text-[#C91414] font-bold text-sm uppercase tracking-wider">
+                Plataforma institucional
+            </span>
+
+            <h1 class="text-4xl md:text-5xl font-bold text-indigo-950 mt-4">
+                Bienvenido a SOFT-EFSRT
+            </h1>
+
+            <p class="max-w-2xl mx-auto text-slate-600 mt-5 text-lg">
+                Sistema de gestión y supervisión de las Experiencias
+                Formativas en Situaciones Reales de Trabajo.
+            </p>
+
+            <a href="login.html"
+               class="inline-block mt-7 bg-[#C91414] text-white px-7 py-3 rounded-lg font-semibold hover:bg-red-800 transition">
+                Acceder al sistema
+            </a>
+
+        </section>
+
+        <!-- MÓDULOS -->
+        <section class="max-w-6xl mx-auto px-6 py-12">
+
+            <h2 class="text-2xl font-bold text-indigo-950 text-center mb-8">
+                Módulos del sistema
+            </h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+                <a href="dashboard.html"
+                   class="bg-white p-6 rounded-xl shadow-sm border border-slate-200 hover:shadow-lg transition">
+
+                    <h3 class="text-xl font-bold text-indigo-950">
+                        Supervisión
+                    </h3>
+
+                    <p class="text-slate-500 mt-3">
+                        Consulta las horas y asistencias de los practicantes.
+                    </p>
+
+                    <p class="text-[#C91414] font-semibold mt-4">
+                        Ver módulo →
+                    </p>
+
+                </a>
+
+                <a href="estudiantes.html"
+                   class="bg-white p-6 rounded-xl shadow-sm border border-slate-200 hover:shadow-lg transition">
+
+                    <h3 class="text-xl font-bold text-indigo-950">
+                        Practicantes
+                    </h3>
+
+                    <p class="text-slate-500 mt-3">
+                        Consulta el directorio y los estados de validación.
+                    </p>
+
+                    <p class="text-[#C91414] font-semibold mt-4">
+                        Ver módulo →
+                    </p>
+
+                </a>
+
+                <a href="portafolio.html"
+                   class="bg-white p-6 rounded-xl shadow-sm border border-slate-200 hover:shadow-lg transition">
+
+                    <h3 class="text-xl font-bold text-indigo-950">
+                        Portafolio
+                    </h3>
+
+                    <p class="text-slate-500 mt-3">
+                        Conoce el desarrollo y alcance del proyecto.
+                    </p>
+
+                    <p class="text-[#C91414] font-semibold mt-4">
+                        Ver módulo →
+                    </p>
+
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- ================================= -->
+    <!-- ACTIVIDAD 3: FOOTER INSTITUCIONAL -->
+    <!-- ================================= -->
+
+    <footer class="bg-slate-950 text-white border-t-4 border-[#C91414]">
+
+        <div class="max-w-7xl mx-auto px-6 py-12">
+
+            <!-- DISTRIBUCIÓN RESPONSIVE DEL FOOTER -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+
+                <!-- COLUMNA 1: INFORMACIÓN INSTITUCIONAL -->
+                <div>
+
+                    <h2 class="text-2xl font-bold mb-4">
+                        SOFT<span class="text-red-400">-EFSRT</span>
+                    </h2>
+
+                    <div class="w-12 h-1 bg-[#C91414] mb-4"></div>
+
+                    <p class="text-slate-300 text-sm leading-relaxed">
+                        Sistema de gestión y supervisión de las
+                        Experiencias Formativas en Situaciones
+                        Reales de Trabajo.
+                    </p>
+
+                    <p class="text-slate-300 text-sm mt-4">
+                        IESTP Andrés Avelino Cáceres Dorregaray
+                    </p>
+
+                </div>
+
+                <!-- COLUMNA 2: ENLACES RÁPIDOS -->
+                <div>
+
+                    <h3 class="text-lg font-semibold mb-4">
+                        Enlaces rápidos
+                    </h3>
+
+                    <div class="w-12 h-1 bg-[#C91414] mb-4"></div>
+
+                    <ul class="space-y-3 text-sm text-slate-300">
+
+                        <li>
+                            <a href="index.html" class="hover:text-red-400 transition">
+                                Inicio
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="login.html" class="hover:text-red-400 transition">
+                                Inicio de sesión
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="dashboard.html" class="hover:text-red-400 transition">
+                                Supervisión EFSRT
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="estudiantes.html" class="hover:text-red-400 transition">
+                                Directorio de practicantes
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="portafolio.html" class="hover:text-red-400 transition">
+                                Portafolio
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="componentes.html" class="hover:text-red-400 transition">
+                                Atomic Design
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </div>
+
+                <!-- COLUMNA 3: CONTACTO -->
+                <div>
+
+                    <h3 class="text-lg font-semibold mb-4">
+                        Contacto institucional
+                    </h3>
+
+                    <div class="w-12 h-1 bg-[#C91414] mb-4"></div>
+
+                    <div class="space-y-4 text-sm text-slate-300">
+
+                        <div>
+                            <p class="font-semibold text-white">Ubicación</p>
+                            <p>San Agustín de Cajas, Huancayo, Junín, Perú.</p>
+                        </div>
+
+                        <div>
+                            <p class="font-semibold text-white">Área de atención</p>
+                            <p>Coordinación de EFSRT</p>
+                        </div>
+
+                        <div>
+                            <p class="font-semibold text-white">Programa de estudios</p>
+                            <p>Diseño y Programación Web</p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- DERECHOS DE AUTOR -->
+            <div class="border-t border-slate-600 mt-10 pt-6 text-center">
+
+                <p class="text-sm text-slate-300">
+                    © 2026 SOFT-EFSRT. Todos los derechos reservados.
+                </p>
+
+                <p class="text-xs text-slate-400 mt-2">
+                    Proyecto académico | Diseño y Programación Web
+                </p>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+</body>
+</html>

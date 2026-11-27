@@ -1,1 +1,420 @@
-<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Atomic Design</title><script src="https://cdn.tailwindcss.com"></script></head><body class="bg-slate-50 text-slate-800"><nav class="bg-indigo-950 text-white p-5 flex flex-wrap gap-5"><a class="hover:underline" href="index.html">Inicio</a><a class="hover:underline" href="portafolio.html">Equipo</a><a class="hover:underline" href="login.html">Login</a><a class="hover:underline" href="dashboard.html">Supervisión</a><a class="hover:underline" href="estudiantes.html">Estudiantes</a><a class="hover:underline" href="componentes.html">Atomic Design</a></nav><main class="max-w-6xl mx-auto p-6"><h1 class="text-3xl font-bold text-indigo-950 mb-6">Atomic Design</h1><section class="bg-white p-6 mb-4 rounded-xl"><h2 class="font-bold mb-3">Átomo: botón y badge</h2><button class="bg-[#C91414] text-white p-2 rounded-lg">Validar</button> <span class="bg-green-100 text-green-700 rounded-full px-3 py-1">Validado</span></section><section class="bg-white p-6 mb-4 rounded-xl"><h2 class="font-bold mb-3">Molécula: progreso</h2><p>96/128 horas · 75%</p><div class="bg-slate-200 h-3 rounded-full"><div class="bg-indigo-600 h-3 w-3/4 rounded-full"></div></div></section><section class="bg-white p-6 rounded-xl"><h2 class="font-bold mb-3">Organismo: tarjeta</h2><article class="border p-5 rounded-xl max-w-md"><h3>Carlos Ramos</h3><p>Diseño y Programación Web</p><p>96/128 horas · 75%</p><div class="bg-slate-200 h-3 rounded-full"><div class="bg-indigo-600 h-3 w-3/4 rounded-full"></div></div><div class="mt-4"><button class="bg-[#C91414] text-white p-2 rounded-lg">Validar</button> <span class="bg-green-100 text-green-700 rounded-full px-3 py-1">Validado</span></div></article></section></main><footer class="bg-indigo-950 text-white p-8 mt-8"><div class="grid grid-cols-1 md:grid-cols-3 gap-8"><div><h2 class="font-bold text-xl">SOFT-EFSRT</h2><p>Experiencias formativas</p></div><div><h2 class="font-bold">Enlaces rápidos</h2><a href="dashboard.html">Supervisión</a><br><a href="estudiantes.html">Estudiantes</a></div><div><h2 class="font-bold">Contacto</h2><p>San Agustín de Cajas, Huancayo</p><p>Completar correo y teléfono oficiales</p></div></div><p class="border-t-2 border-[#C91414] mt-6 pt-4 text-center">© 2026 SOFT-EFSRT</p></footer></body></html>
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atomic Design | SOFT-EFSRT</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col">
+
+    <!-- MENÚ DE NAVEGACIÓN -->
+    <nav class="bg-indigo-950 text-white p-6">
+
+        <div class="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-5">
+
+            <a href="index.html" class="text-2xl font-bold">
+                SOFT<span class="text-red-400">-EFSRT</span>
+            </a>
+
+            <div class="flex flex-wrap gap-5 text-sm">
+
+                <a href="index.html" class="hover:text-red-400">
+                    Inicio
+                </a>
+
+                <a href="portafolio.html" class="hover:text-red-400">
+                    Portafolio
+                </a>
+
+                <a href="dashboard.html" class="hover:text-red-400">
+                    Supervisión
+                </a>
+
+                <a href="estudiantes.html" class="hover:text-red-400">
+                    Practicantes
+                </a>
+
+                <a href="componentes.html" class="text-red-400 font-bold">
+                    Atomic Design
+                </a>
+
+                <a href="login.html" class="hover:text-red-400">
+                    Login
+                </a>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main class="max-w-7xl w-full mx-auto px-6 py-10 flex-1">
+
+        <!-- ENCABEZADO -->
+        <header class="mb-10">
+
+            <p class="text-[#C91414] font-bold text-sm uppercase">
+                Sistema de diseño
+            </p>
+
+            <h1 class="text-4xl font-bold text-indigo-950 mt-2">
+                Atomic Design
+            </h1>
+
+            <p class="text-slate-500 mt-3">
+                Biblioteca de componentes reutilizables del sistema SOFT-EFSRT.
+            </p>
+
+        </header>
+
+        <!-- ====================================== -->
+        <!-- NIVEL 1: ÁTOMOS -->
+        <!-- ====================================== -->
+
+        <section class="bg-white rounded-2xl border border-slate-200 shadow-sm p-8 mb-8">
+
+            <p class="text-[#C91414] font-bold text-sm">
+                NIVEL 01
+            </p>
+
+            <h2 class="text-2xl font-bold text-indigo-950 mt-2">
+                Átomos
+            </h2>
+
+            <p class="text-slate-500 mt-2 mb-6">
+                Son los elementos básicos e individuales de una interfaz.
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+                <!-- ÁTOMO 1: BOTÓN PRIMARIO -->
+                <div class="bg-slate-50 rounded-xl border p-6">
+
+                    <h3 class="font-bold text-indigo-950 mb-4">
+                        Botón primario
+                    </h3>
+
+                    <button type="button"
+                        class="bg-[#C91414] hover:bg-red-800 text-white font-semibold px-6 py-3 rounded-lg transition">
+
+                        Validar fólder
+
+                    </button>
+
+                    <p class="text-sm text-slate-500 mt-4">
+                        Elemento individual que representa una acción.
+                    </p>
+
+                    <p class="text-xs text-slate-500 mt-2">
+                        Color institucional: #C91414
+                    </p>
+
+                </div>
+
+                <!-- ÁTOMO 2: BADGES DE ESTADO -->
+                <div class="bg-slate-50 rounded-xl border p-6">
+
+                    <h3 class="font-bold text-indigo-950 mb-4">
+                        Badges de estado
+                    </h3>
+
+                    <div class="flex flex-wrap gap-3">
+
+                        <span class="bg-green-100 text-green-800 px-4 py-2 rounded-full text-sm font-semibold">
+                            Validado
+                        </span>
+
+                        <span class="bg-amber-100 text-amber-800 px-4 py-2 rounded-full text-sm font-semibold">
+                            Pendiente
+                        </span>
+
+                        <span class="bg-red-100 text-red-800 px-4 py-2 rounded-full text-sm font-semibold">
+                            Observado
+                        </span>
+
+                    </div>
+
+                    <p class="text-sm text-slate-500 mt-4">
+                        Etiquetas individuales que identifican un estado.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- ====================================== -->
+        <!-- NIVEL 2: MOLÉCULAS -->
+        <!-- ====================================== -->
+
+        <section class="bg-white rounded-2xl border border-slate-200 shadow-sm p-8 mb-8">
+
+            <p class="text-[#C91414] font-bold text-sm">
+                NIVEL 02
+            </p>
+
+            <h2 class="text-2xl font-bold text-indigo-950 mt-2">
+                Moléculas
+            </h2>
+
+            <p class="text-slate-500 mt-2 mb-6">
+                Agrupación de elementos básicos que cumplen una función específica.
+            </p>
+
+            <!-- MOLÉCULA: BARRA DE PROGRESO -->
+            <div class="bg-slate-50 border rounded-xl p-6 max-w-2xl">
+
+                <h3 class="font-bold text-indigo-950 mb-5">
+                    Progreso de horas EFSRT
+                </h3>
+
+                <!-- TEXTO Y CANTIDAD -->
+                <div class="flex justify-between items-center mb-3">
+
+                    <span class="text-slate-600">
+                        Horas acumuladas
+                    </span>
+
+                    <span class="font-bold text-indigo-950">
+                        96 / 128 h
+                    </span>
+
+                </div>
+
+                <!-- BARRA DE PROGRESO -->
+                <div class="w-full bg-slate-200 h-4 rounded-full overflow-hidden">
+
+                    <div class="bg-emerald-500 h-4 rounded-full w-[75%]">
+                    </div>
+
+                </div>
+
+                <!-- PORCENTAJE -->
+                <p class="text-right text-emerald-600 font-bold mt-3">
+                    75% completado
+                </p>
+
+                <p class="text-sm text-slate-500 mt-4">
+                    Esta molécula combina textos, cantidad de horas,
+                    barra de progreso y porcentaje.
+                </p>
+
+            </div>
+
+        </section>
+
+        <!-- ====================================== -->
+        <!-- NIVEL 3: ORGANISMOS -->
+        <!-- ====================================== -->
+
+        <section class="bg-white rounded-2xl border border-slate-200 shadow-sm p-8 mb-8">
+
+            <p class="text-[#C91414] font-bold text-sm">
+                NIVEL 03
+            </p>
+
+            <h2 class="text-2xl font-bold text-indigo-950 mt-2">
+                Organismos
+            </h2>
+
+            <p class="text-slate-500 mt-2 mb-6">
+                Componentes completos que integran átomos y moléculas.
+            </p>
+
+            <!-- ORGANISMO: TARJETA DEL PRACTICANTE -->
+            <article class="max-w-md bg-white border border-slate-200 rounded-2xl shadow-md overflow-hidden">
+
+                <div class="h-2 bg-[#C91414]"></div>
+
+                <div class="p-6">
+
+                    <!-- INFORMACIÓN DEL ESTUDIANTE -->
+                    <div class="flex items-center gap-4 mb-6">
+
+                        <div class="w-14 h-14 shrink-0 bg-indigo-950 text-white rounded-full flex items-center justify-center font-bold text-xl">
+                            MG
+                        </div>
+
+                        <div>
+
+                            <p class="text-xs text-slate-500">
+                                Código: E001
+                            </p>
+
+                            <h3 class="text-lg font-bold text-indigo-950">
+                                María García López
+                            </h3>
+
+                        </div>
+
+                    </div>
+
+                    <div class="space-y-4">
+
+                        <div>
+
+                            <p class="text-xs text-slate-500">
+                                Programa de estudios
+                            </p>
+
+                            <p class="font-medium">
+                                Diseño y Programación Web
+                            </p>
+
+                        </div>
+
+                        <div>
+
+                            <p class="text-xs text-slate-500">
+                                Empresa
+                            </p>
+
+                            <p class="font-medium">
+                                Innovación Digital
+                            </p>
+
+                        </div>
+
+                        <!-- MOLÉCULA INTEGRADA -->
+                        <div class="border-t pt-4">
+
+                            <div class="flex justify-between text-sm mb-3">
+
+                                <span class="text-slate-500">
+                                    Horas acumuladas
+                                </span>
+
+                                <span class="font-bold text-indigo-950">
+                                    96 / 128 h
+                                </span>
+
+                            </div>
+
+                            <div class="w-full bg-slate-200 rounded-full h-3">
+
+                                <div class="bg-emerald-500 rounded-full h-3 w-[75%]">
+                                </div>
+
+                            </div>
+
+                            <p class="text-right text-emerald-600 font-bold text-sm mt-2">
+                                75% completado
+                            </p>
+
+                        </div>
+
+                        <!-- ÁTOMO: BADGE INTEGRADO -->
+                        <div class="flex justify-between items-center border-t pt-4">
+
+                            <span class="text-sm text-slate-500">
+                                Estado del fólder
+                            </span>
+
+                            <span class="bg-amber-100 text-amber-800 px-3 py-1 rounded-full text-sm font-semibold">
+                                Pendiente
+                            </span>
+
+                        </div>
+
+                        <!-- ÁTOMO: BOTÓN INTEGRADO -->
+                        <button type="button"
+                            class="w-full bg-[#C91414] hover:bg-red-800 text-white font-semibold py-3 rounded-lg transition">
+
+                            Validar fólder
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+            <div class="bg-indigo-50 border-l-4 border-indigo-950 rounded-lg p-5 mt-6">
+
+                <h3 class="font-bold text-indigo-950">
+                    Composición del organismo
+                </h3>
+
+                <p class="text-sm text-slate-600 mt-2">
+                    La tarjeta integra los datos del estudiante,
+                    el átomo botón, el átomo badge y la molécula
+                    barra de progreso.
+                </p>
+
+            </div>
+
+        </section>
+
+        <!-- RESUMEN DE LA ARQUITECTURA -->
+        <section class="bg-indigo-950 text-white rounded-2xl p-8">
+
+            <h2 class="text-2xl font-bold mb-6">
+                Arquitectura de componentes
+            </h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+
+                <div class="bg-white/10 rounded-xl p-5">
+
+                    <h3 class="font-bold text-red-300">
+                        01. Átomo
+                    </h3>
+
+                    <p class="text-sm mt-2">
+                        Botones y badges.
+                    </p>
+
+                </div>
+
+                <div class="bg-white/10 rounded-xl p-5">
+
+                    <h3 class="font-bold text-red-300">
+                        02. Molécula
+                    </h3>
+
+                    <p class="text-sm mt-2">
+                        Barra de progreso con textos y porcentaje.
+                    </p>
+
+                </div>
+
+                <div class="bg-white/10 rounded-xl p-5">
+
+                    <h3 class="font-bold text-red-300">
+                        03. Organismo
+                    </h3>
+
+                    <p class="text-sm mt-2">
+                        Tarjeta completa del practicante.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-indigo-950 text-white border-t-4 border-[#C91414] p-6 text-center">
+
+        <p class="font-bold">
+            SOFT-EFSRT
+        </p>
+
+        <p class="text-sm text-slate-300 mt-2">
+            © 2026 | IESTP Andrés Avelino Cáceres Dorregaray
+        </p>
+
+    </footer>
+
+</body>
+</html>

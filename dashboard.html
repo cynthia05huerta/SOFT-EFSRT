@@ -1,1 +1,292 @@
-<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Supervisión</title><script src="https://cdn.tailwindcss.com"></script></head><body class="bg-slate-50 text-slate-800"><nav class="bg-indigo-950 text-white p-5 flex flex-wrap gap-5"><a class="hover:underline" href="index.html">Inicio</a><a class="hover:underline" href="portafolio.html">Equipo</a><a class="hover:underline" href="login.html">Login</a><a class="hover:underline" href="dashboard.html">Supervisión</a><a class="hover:underline" href="estudiantes.html">Estudiantes</a><a class="hover:underline" href="componentes.html">Atomic Design</a></nav><main class="max-w-6xl mx-auto p-6"><h1 class="text-3xl font-bold text-indigo-950 mb-6">Supervisión</h1><div class="grid grid-cols-1 md:grid-cols-3 gap-4"><div class="bg-white p-6 rounded-xl shadow"><p>Horas requeridas</p><strong class="text-2xl">128</strong></div><div class="bg-white p-6 rounded-xl shadow"><p>Horas certificadas</p><strong class="text-2xl">96</strong></div><div class="bg-white p-6 rounded-xl shadow"><p>Estado del fólder</p><strong class="text-2xl">Pendiente</strong></div></div><div class="overflow-x-auto mt-6"><table class="w-full bg-white"><thead class="bg-indigo-950 text-white"><tr><th class="p-3">Fecha</th><th class="p-3">Entrada</th><th class="p-3">Salida</th><th class="p-3">Actividad</th><th class="p-3">Visto bueno</th></tr></thead><tbody><tr class="border-b text-center"><td class="p-3">23/11/2026</td><td>08:00</td><td>12:00</td><td>Diseño</td><td><span class="bg-green-100 text-green-700 rounded-full px-3 py-1">Validado</span></td></tr><tr class="border-b text-center"><td class="p-3">24/11/2026</td><td>08:00</td><td>12:00</td><td>Pruebas</td><td><span class="bg-yellow-100 text-yellow-700 rounded-full px-3 py-1">Pendiente</span></td></tr></tbody></table></div></main><footer class="bg-indigo-950 text-white p-8 mt-8"><div class="grid grid-cols-1 md:grid-cols-3 gap-8"><div><h2 class="font-bold text-xl">SOFT-EFSRT</h2><p>Experiencias formativas</p></div><div><h2 class="font-bold">Enlaces rápidos</h2><a href="dashboard.html">Supervisión</a><br><a href="estudiantes.html">Estudiantes</a></div><div><h2 class="font-bold">Contacto</h2><p>San Agustín de Cajas, Huancayo</p><p>Completar correo y teléfono oficiales</p></div></div><p class="border-t-2 border-[#C91414] mt-6 pt-4 text-center">© 2026 SOFT-EFSRT</p></footer></body></html>
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Supervisión | SOFT-EFSRT</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col">
+
+    <!-- MENÚ DE NAVEGACIÓN -->
+    <nav class="bg-indigo-950 text-white px-6 py-5">
+        <div class="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-5">
+
+            <a href="index.html" class="text-2xl font-bold">
+                SOFT<span class="text-red-400">-EFSRT</span>
+            </a>
+
+            <div class="flex flex-wrap gap-5 text-sm">
+                <a href="index.html" class="hover:text-red-400">Inicio</a>
+                <a href="portafolio.html" class="hover:text-red-400">Portafolio</a>
+                <a href="dashboard.html" class="text-red-400 font-bold">Supervisión</a>
+                <a href="estudiantes.html" class="hover:text-red-400">Practicantes</a>
+                <a href="componentes.html" class="hover:text-red-400">Atomic Design</a>
+                <a href="login.html" class="hover:text-red-400">Login</a>
+            </div>
+
+        </div>
+    </nav>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main class="max-w-7xl w-full mx-auto px-6 py-10 flex-1">
+
+        <!-- ENCABEZADO -->
+        <header class="mb-8">
+
+            <p class="text-[#C91414] font-semibold text-sm uppercase">
+                Módulo EFSRT
+            </p>
+
+            <h1 class="text-3xl font-bold text-indigo-950 mt-2">
+                Panel de supervisión
+            </h1>
+
+            <p class="text-slate-500 mt-2">
+                Seguimiento de horas, asistencias y validación del fólder.
+            </p>
+
+        </header>
+
+        <!-- ================================= -->
+        <!-- ACTIVIDAD 4: TARJETAS KPI -->
+        <!-- ================================= -->
+
+        <section class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+
+            <!-- KPI 1: HORAS REQUERIDAS -->
+            <article class="bg-white rounded-2xl shadow-sm p-6 border border-slate-200 border-l-4 border-l-indigo-600">
+
+                <p class="text-sm font-semibold text-slate-500">
+                    Horas Requeridas
+                </p>
+
+                <h2 class="text-4xl font-bold text-indigo-950 mt-3">
+                    128 <span class="text-lg">h</span>
+                </h2>
+
+                <p class="text-sm text-slate-500 mt-3">
+                    Total de horas establecidas
+                </p>
+
+                <div class="bg-indigo-100 text-indigo-800 rounded-lg px-3 py-2 mt-4 text-sm">
+                    Meta de prácticas formativas
+                </div>
+
+            </article>
+
+            <!-- KPI 2: HORAS CERTIFICADAS -->
+            <article class="bg-white rounded-2xl shadow-sm p-6 border border-slate-200 border-l-4 border-l-emerald-500">
+
+                <p class="text-sm font-semibold text-slate-500">
+                    Horas Certificadas
+                </p>
+
+                <h2 class="text-4xl font-bold text-emerald-600 mt-3">
+                    96 <span class="text-lg">h</span>
+                </h2>
+
+                <div class="flex justify-between text-sm mt-4 mb-2">
+                    <span class="text-slate-500">Progreso</span>
+                    <span class="font-bold text-emerald-600">75%</span>
+                </div>
+
+                <div class="w-full bg-slate-200 rounded-full h-3">
+                    <div class="bg-emerald-500 h-3 rounded-full w-[75%]"></div>
+                </div>
+
+                <p class="text-sm text-slate-500 mt-3">
+                    Faltan 32 horas por completar
+                </p>
+
+            </article>
+
+            <!-- KPI 3: ESTADO DEL FÓLDER -->
+            <article class="bg-white rounded-2xl shadow-sm p-6 border border-slate-200 border-l-4 border-l-amber-500">
+
+                <p class="text-sm font-semibold text-slate-500">
+                    Estado del Fólder
+                </p>
+
+                <h2 class="text-2xl font-bold text-amber-600 mt-4">
+                    Pendiente
+                </h2>
+
+                <span class="inline-block bg-amber-100 text-amber-800 px-3 py-1 rounded-full text-xs font-semibold mt-4">
+                    En revisión
+                </span>
+
+                <p class="text-sm text-slate-500 mt-4">
+                    Documentación pendiente de validación.
+                </p>
+
+            </article>
+
+        </section>
+
+        <!-- ================================= -->
+        <!-- TABLA DE ASISTENCIAS -->
+        <!-- ================================= -->
+
+        <section class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
+
+            <div class="p-6 border-b border-slate-200">
+
+                <h2 class="text-xl font-bold text-indigo-950">
+                    Registro de asistencias
+                </h2>
+
+                <p class="text-sm text-slate-500 mt-1">
+                    Control de actividades realizadas durante las prácticas.
+                </p>
+
+            </div>
+
+            <!-- TABLA RESPONSIVE -->
+            <div class="overflow-x-auto">
+
+                <table class="w-full text-sm text-left">
+
+                    <!-- CABECERA -->
+                    <thead class="bg-indigo-950 text-white">
+                        <tr>
+                            <th class="px-6 py-4">N.º</th>
+                            <th class="px-6 py-4">Fecha</th>
+                            <th class="px-6 py-4">Entrada</th>
+                            <th class="px-6 py-4">Salida</th>
+                            <th class="px-6 py-4">Actividades</th>
+                            <th class="px-6 py-4">Visto Bueno</th>
+                        </tr>
+                    </thead>
+
+                    <!-- CUERPO DE LA TABLA -->
+                    <tbody class="divide-y divide-slate-200">
+
+                        <!-- FILA 1 -->
+                        <tr class="hover:bg-slate-50">
+                            <td class="px-6 py-4">01</td>
+                            <td class="px-6 py-4 whitespace-nowrap">16/11/2026</td>
+                            <td class="px-6 py-4">14:00</td>
+                            <td class="px-6 py-4">18:00</td>
+                            <td class="px-6 py-4">
+                                Análisis de requerimientos
+                            </td>
+                            <td class="px-6 py-4">
+                                <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-xs font-semibold">
+                                    Validado
+                                </span>
+                            </td>
+                        </tr>
+
+                        <!-- FILA 2 -->
+                        <tr class="hover:bg-slate-50">
+                            <td class="px-6 py-4">02</td>
+                            <td class="px-6 py-4 whitespace-nowrap">17/11/2026</td>
+                            <td class="px-6 py-4">14:00</td>
+                            <td class="px-6 py-4">18:00</td>
+                            <td class="px-6 py-4">
+                                Diseño de interfaces web
+                            </td>
+                            <td class="px-6 py-4">
+                                <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-xs font-semibold">
+                                    Validado
+                                </span>
+                            </td>
+                        </tr>
+
+                        <!-- FILA 3 -->
+                        <tr class="hover:bg-slate-50">
+                            <td class="px-6 py-4">03</td>
+                            <td class="px-6 py-4 whitespace-nowrap">18/11/2026</td>
+                            <td class="px-6 py-4">14:00</td>
+                            <td class="px-6 py-4">18:00</td>
+                            <td class="px-6 py-4">
+                                Desarrollo de componentes HTML
+                            </td>
+                            <td class="px-6 py-4">
+                                <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-xs font-semibold">
+                                    Validado
+                                </span>
+                            </td>
+                        </tr>
+
+                        <!-- FILA 4 -->
+                        <tr class="hover:bg-slate-50">
+                            <td class="px-6 py-4">04</td>
+                            <td class="px-6 py-4 whitespace-nowrap">19/11/2026</td>
+                            <td class="px-6 py-4">14:00</td>
+                            <td class="px-6 py-4">18:00</td>
+                            <td class="px-6 py-4">
+                                Pruebas de funcionamiento
+                            </td>
+                            <td class="px-6 py-4">
+                                <span class="bg-amber-100 text-amber-800 px-3 py-1 rounded-full text-xs font-semibold">
+                                    Pendiente
+                                </span>
+                            </td>
+                        </tr>
+
+                        <!-- FILA 5 -->
+                        <tr class="hover:bg-slate-50">
+                            <td class="px-6 py-4">05</td>
+                            <td class="px-6 py-4 whitespace-nowrap">20/11/2026</td>
+                            <td class="px-6 py-4">14:00</td>
+                            <td class="px-6 py-4">18:00</td>
+                            <td class="px-6 py-4">
+                                Elaboración de documentación
+                            </td>
+                            <td class="px-6 py-4">
+                                <span class="bg-amber-100 text-amber-800 px-3 py-1 rounded-full text-xs font-semibold">
+                                    Pendiente
+                                </span>
+                            </td>
+                        </tr>
+
+                    <tr class="hover:bg-slate-50">
+                            <td class="px-6 py-4">05</td>
+                            <td class="px-6 py-4 whitespace-nowrap">20/11/2026</td>
+                            <td class="px-6 py-4">14:00</td>
+                            <td class="px-6 py-4">18:00</td>
+                            <td class="px-6 py-4">
+                                Elaboración de documentación
+                            </td>
+                            <td class="px-6 py-4">
+                                <span class="bg-red-100 text-red-800 px-3 py-1 rounded-full text-xs font-semibold">
+                                    observado
+                                </span>
+                            </td>
+                        </tr>
+
+                        
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+            <div class="p-5 bg-slate-50 text-sm text-slate-500">
+                Registro de asistencias recientes del practicante.
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-indigo-950 text-white border-t-4 border-[#C91414] p-6 text-center">
+
+        <p class="font-bold">SOFT-EFSRT</p>
+
+        <p class="text-sm text-slate-300 mt-2">
+            © 2026 | IESTP Andrés Avelino Cáceres Dorregaray
+        </p>
+
+    </footer>
+
+</body>
+</html>

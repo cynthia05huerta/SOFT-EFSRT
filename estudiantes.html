@@ -1,1 +1,90 @@
-<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Directorio de practicantes</title><script src="https://cdn.tailwindcss.com"></script></head><body class="bg-slate-50 text-slate-800"><nav class="bg-indigo-950 text-white p-5 flex flex-wrap gap-5"><a class="hover:underline" href="index.html">Inicio</a><a class="hover:underline" href="portafolio.html">Equipo</a><a class="hover:underline" href="login.html">Login</a><a class="hover:underline" href="dashboard.html">Supervisión</a><a class="hover:underline" href="estudiantes.html">Estudiantes</a><a class="hover:underline" href="componentes.html">Atomic Design</a></nav><main class="max-w-6xl mx-auto p-6"><h1 class="text-3xl font-bold text-indigo-950 mb-6">Directorio de practicantes</h1><p id="contador" class="font-bold mb-4"></p><div class="flex flex-wrap gap-4 mb-5"><input id="buscar" class="border p-3 rounded-lg" placeholder="Buscar nombre"><select id="filtro" class="border p-3 rounded-lg"><option>Todos</option><option>Validado</option><option>Pendiente</option></select></div><div id="cards" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"></div><script src="estudiantes.js"></script></main><footer class="bg-indigo-950 text-white p-8 mt-8"><div class="grid grid-cols-1 md:grid-cols-3 gap-8"><div><h2 class="font-bold text-xl">SOFT-EFSRT</h2><p>Experiencias formativas</p></div><div><h2 class="font-bold">Enlaces rápidos</h2><a href="dashboard.html">Supervisión</a><br><a href="estudiantes.html">Estudiantes</a></div><div><h2 class="font-bold">Contacto</h2><p>San Agustín de Cajas, Huancayo</p><p>Completar correo y teléfono oficiales</p></div></div><p class="border-t-2 border-[#C91414] mt-6 pt-4 text-center">© 2026 SOFT-EFSRT</p></footer></body></html>
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practicantes | SOFT-EFSRT</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col">
+
+    <!-- MENÚ -->
+    <nav class="bg-indigo-950 text-white p-6">
+        <div class="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-5">
+
+            <a href="index.html" class="text-2xl font-bold">
+                SOFT<span class="text-red-400">-EFSRT</span>
+            </a>
+
+            <div class="flex flex-wrap gap-5 text-sm">
+                <a href="index.html" class="hover:text-red-400">Inicio</a>
+                <a href="portafolio.html" class="hover:text-red-400">Portafolio</a>
+                <a href="dashboard.html" class="hover:text-red-400">Supervisión</a>
+                <a href="estudiantes.html" class="text-red-400 font-bold">Practicantes</a>
+                <a href="componentes.html" class="hover:text-red-400">Atomic Design</a>
+                <a href="login.html" class="hover:text-red-400">Login</a>
+            </div>
+
+        </div>
+    </nav>
+
+    <main class="max-w-7xl w-full mx-auto px-6 py-10 flex-1">
+
+        <!-- ENCABEZADO -->
+        <header class="mb-8">
+
+            <p class="text-[#C91414] font-bold text-sm uppercase">
+                Módulo EFSRT
+            </p>
+
+            <h1 class="text-3xl font-bold text-indigo-950 mt-2">
+                Directorio de practicantes
+            </h1>
+
+            <p class="text-slate-500 mt-2">
+                Consulta la información y el progreso de los estudiantes.
+            </p>
+
+        </header>
+
+        <!-- CONTADOR -->
+        <section class="bg-white rounded-xl border border-slate-200 p-5 mb-8">
+
+            <p class="text-slate-500 text-sm">
+                Total de practicantes registrados
+            </p>
+
+            <p id="total" class="text-3xl font-bold text-indigo-950 mt-2">
+                0
+            </p>
+
+        </section>
+
+        <!-- CONTENEDOR DE TARJETAS DINÁMICAS -->
+        <section id="contenedor"
+                 class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+            <!-- JavaScript genera aquí las 10 tarjetas -->
+
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-indigo-950 text-white border-t-4 border-[#C91414] p-6 text-center">
+
+        <p class="font-bold">SOFT-EFSRT</p>
+
+        <p class="text-sm text-slate-300 mt-2">
+            © 2026 | IESTP Andrés Avelino Cáceres Dorregaray
+        </p>
+
+    </footer>
+
+    <!-- CONEXIÓN CON JAVASCRIPT -->
+    <script src="estudiantes.js"></script>
+
+</body>
+</html>
